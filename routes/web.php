@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +31,7 @@ Route::delete('/questionnaires/{questionnaire}/questions/{question}', 'QuestionC
 
 Route::get('/surveys/{questionnaire}-{slug}', 'SurveyController@show');
 Route::post('/surveys/{questionnaire}-{slug}', 'SurveyController@store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
